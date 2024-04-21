@@ -1,0 +1,111 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    
+}    
+.container{
+    width: 100%;
+    padding: 20px;
+}
+.container button{
+    width: 120px;
+    height: 50px;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 30px 20px;
+    background-image: linear-gradient(to right, #FF512F 0%, #DD2476  51%, #FF512F  100%);
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+}
+
+
+.container button:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+      }
+     
+/* .container button:hover {
+    background-position: right center; change the direction of the change here
+    color: #fff;
+    text-decoration: none;
+} */
+.toastbox{
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+}
+.toast{
+    width: 400px;
+    height: 80px;
+    margin: 10px 0px;
+    font-size: 1rem ;
+    font-weight: 600;
+    background: white;
+    border-radius: 4px;
+    display: flex;
+    align-items:center;
+    transform: translateX(100%);
+    animation: moveleft 0.5s linear forwards ;
+}
+@keyframes moveleft {
+    100%{
+        transform: translatex(0%);
+    }
+}
+.toast i{
+    font-size: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: green;
+}
+.error i{
+    color: red;
+}
+.Invalid i{
+    color: orange;
+}
+.toast{
+    position: relative;
+}
+.toast::after{
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: green;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: ani 6s linear forwards;
+}
+@keyframes ani {
+    100%{
+        width: 0%;
+    }
+}
+.error::after{
+    background-color: red;
+}
+.Invalid::after{
+    background-color: orange;
+}
